@@ -22,8 +22,8 @@ function Login({navigation}) {
             if (res.val().Category === 'Customer') {
               navigation.navigate('Home', res);
             }
-            if (res.val().Category == 'Rider') {
-              navigation.navigate('Home');
+           else if (res.val().Category == 'Rider') {
+              navigation.navigate('Rider');
             }
             setloader(false);
           })
