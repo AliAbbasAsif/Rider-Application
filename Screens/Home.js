@@ -1,7 +1,7 @@
 import React, {useState} from 'react';
 import {View} from 'react-native';
 import Icon from 'react-native-vector-icons/dist/MaterialIcons';
-import MapView, {Marker, PROVIDER_GOOGLE} from 'react-native-maps'; // remove PROVIDER_GOOGLE import if not using Google Maps
+import MapView, {Circle, Marker, PROVIDER_GOOGLE} from 'react-native-maps'; // remove PROVIDER_GOOGLE import if not using Google Maps
 import Geolocation from '@react-native-community/geolocation';
 
 function Home() {
@@ -20,6 +20,7 @@ function Home() {
         <View>
           <MapView
             provider={PROVIDER_GOOGLE} // remove if not using Google Maps
+            userInterfaceStyle="dark"
             style={{
               height: 500,
               width: 400,
@@ -28,12 +29,13 @@ function Home() {
               latitude: lang,
               longitude: long,
               latitudeDelta: 0.009,
-              longitudeDelta: 0.0009,
+              longitudeDelta: 0.004,
             }}>
+              
             <Marker
               coordinate={{latitude: lang, longitude: long}}
               title="test description"
-              description="test description"></Marker>
+              description="test description"></Marker>        
           </MapView>
         </View>
       </View>
